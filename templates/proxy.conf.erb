@@ -1,0 +1,9 @@
+# mod_proxy setup.
+ProxyRequests Off
+ProxyPass / http://<%= @app_ip %>:<%= @port %>/
+ProxyPassReverse / http://<%= @app_ip %>:<%= @port %>/
+
+<Location '/'>
+  Order allow,deny
+  Allow from all
+</Location>
