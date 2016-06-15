@@ -14,6 +14,7 @@ define myapp::web (
     group   => $apache::group,
     mode    => '0644',
     content => template("${module_name}/proxy.conf.erb"),
+    notify  => Service[$apache::service_name],
   }
 
 }
