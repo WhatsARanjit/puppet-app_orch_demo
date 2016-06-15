@@ -4,7 +4,7 @@ define myapp::app (
 
   class { 'profiles::app':
     port => $port,
-  }->
+  }
   class { 'profiles::jenkins': }
 
 }
