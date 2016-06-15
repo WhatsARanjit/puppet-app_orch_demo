@@ -15,7 +15,7 @@ define myapp::web (
     owner   => $apache::user,
     group   => $apache::group,
     mode    => '0644',
-    content => template("${module_name}/proxy.conf"),
+    content => template("${module_name}/proxy.conf.erb"),
   }
 
 }
