@@ -20,3 +20,8 @@ define myapp::app (
   }
 
 }
+
+Myapp::App produces Proxy_dest {
+  host => $ipaddress,
+  port => $port,
+}

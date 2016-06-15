@@ -19,3 +19,8 @@ define myapp::web (
   }
 
 }
+
+Myapp::Web consumes Proxy_dest {
+  app_ip => $host,
+  port   => $port,
+}
