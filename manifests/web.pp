@@ -3,12 +3,10 @@ define myapp::web (
   $port   = '8081',
 ) {
 
-  class { 'apache':
-    default_vhost => false,
-  }
-
+  include apache
   include apache::mod::proxy
   include apache::mod::proxy_html
+  include apache::mod::proxy_http
 
   file { "${apache::confd_dir}/proxy.conf":
     ensure  => file,

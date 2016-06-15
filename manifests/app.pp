@@ -22,6 +22,6 @@ define myapp::app (
 }
 
 Myapp::App produces Proxy_dest {
-  host => $ipaddress,
+  host => pick($networking['interfaces']['enp0s8']['ip'], $ipaddress),
   port => $port,
 }
